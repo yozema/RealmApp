@@ -107,7 +107,8 @@ extension TasksViewController {
         )
         let alert = taskAlertFactory.createAlert { [weak self] taskTitle, taskNote in
             if let task, let completion {
-                // TODO: - edit task
+                self?.storageManager.edit(task, newValue: taskTitle, note: taskNote)
+                completion()
             } else {
                 self?.save(task: taskTitle, withNote: taskNote)
             }
