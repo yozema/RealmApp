@@ -103,7 +103,6 @@ class TasksViewController: UITableViewController {
             tableView.reloadRows(at: [indexPath], with: .automatic)
         }
     }
-
 }
 
 extension TasksViewController {
