@@ -67,7 +67,16 @@ class TasksViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
         
-        return UISwipeActionsConfiguration(actions: [deleteAction])
+        let editAction = UIContextualAction(style: .normal, title: "Edit") { [unowned self] _, _, isDone in
+            showAlert(with: task) {
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
+            isDone(true)
+        }
+        
+        editAction.backgroundColor = .orange
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
     }
 
 }
