@@ -120,7 +120,6 @@ extension TasksViewController {
                 self?.save(task: taskTitle, withNote: taskNote)
             }
         }
-        
         present(alert, animated: true)
     }
     
